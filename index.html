@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>To-do Avançado</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                To-do
+                <i class="fi fi-br-list-check"></i>
+            </h1>
+            <p>Minhas tarefas</p>
+        </header>
+        <form id="todo-form">
+            <div id="form-control">
+                <p>Nova tarefa</p>
+                <input type="text" name="" id="inTodo" placeholder="Sua tarefa de hoje">
+                <button type="submit">
+                    <i class="fi fi-br-add"></i>
+                </button>
+                <p>Adicione uma nova tarefa ao campo de texto.</p>
+            </div>
+        </form>
+        <form id="edit-form">
+            <div id="form-control">
+                <h4>Edite a sua tarefa:</h4>
+                <input type="text" name="" id="input-edit">
+                <button type="submit">
+                    <i class="fi fi-br-check-double"></i>
+                </button>
+            </div>
+            <button id="cancel-edit-btn">cancelar</button>
+        </form>
+        <div id="toobar">
+            <div id="search">
+                <h4>Pesquisar</h4>
+                <form>
+                    <input type="text" name="" id="inSearch">
+                    <button id="clear-btn">
+                        <i class="fi fi-br-delete"></i>
+                    </button>
+                </form>
+            </div>
+            <div id="filter">
+                <h4>Filtro:</h4>
+                <div class="container-select">
+                    <select id="filter-select">
+                        <option value="select">Escolha</option>
+                        <option value="all">Todos</option>
+                        <option value="dono">Concluídas</option>
+                        <option value="todo">A fazer</option>
+                    </select>
+
+                    <div id="result-filter">
+                        <div class="selected" id="done">Cloncluídos</div>
+                        <div class="selected" id="todo">A fazer</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="todo-list">
+            <div class="todo">
+                <button class="finish-todo"><i class="fi fi-br-check"></i></button>
+                <h3>Estou fazendo alguma coisa</h3>
+                <button class="finish-todo"><i class="fi fi-br-edit"></i></button>
+                <button class="finish-todo"><i class="fi fi-br-cross-small"></i></button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
