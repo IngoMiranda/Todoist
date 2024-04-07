@@ -11,3 +11,223 @@ h1{
     font-family: "Lato",sans-serif;
     font-weight: 700;
 }
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    display: flex;
+    flex-direction:column;
+    max-width:600px;
+    margin: 0 auto;
+    padding: 71px 38px;
+    border-radius: 24px;
+    background-color: #F3F3F8;
+    & .none{
+        display: none;
+    }
+}
+
+header{
+    display:flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    width: 457px;
+    height: 98px;
+    gap: 1px;
+    margin-bottom: 24px;
+
+    & h1{
+        display:flex;
+        color:#0295FF;
+        gap: 5px;
+
+        & i{
+            color: #0460A3;
+        }
+    }
+    & p{
+        color: #0295FF;
+        font-size: 16;
+        line-height: 0px;
+    }
+}
+#todo-form{
+    width:457px;
+    
+    & #form-control{
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+        margin-bottom: 24px;
+        & h4{
+           
+            color:#0460A3;
+        }
+
+        & .inTodo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & #inTodo{
+                width: 400px;
+                height: 48px;
+                border: none;
+                border-radius: 8px;
+                padding-left: 10px;
+        
+            }
+
+            & #inTodo::placeholder{
+                font-size: 12px;
+                color:#B1B1B2;
+            }
+
+            & button{
+                width: 48px;
+                height: 48px;
+                background-color: #fff;
+                border: none;
+                border-radius: 6px;
+                margin-left:5px;
+                cursor:pointer;
+                & i{
+                   font-size: 20px;
+                   display:flex;
+                   justify-content: center;
+                   align-items: center;
+                   color:#0295FF;
+
+                }
+            }
+        }
+
+        & .descrition{
+            font-size: 14px;
+            color:#B1B1B2;
+        }
+    }
+}
+
+#edit-form{
+    width:457px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    & #form-control{
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+        margin-bottom: 24px;
+
+        & h4{
+            color:#0460A3;
+        }
+
+        & .editInput{
+            display:flex;
+            & #input-edit{
+                width: 400px;
+                height: 48px;
+                border: none;
+                border-radius: 8px;
+                padding-left: 10px;
+            }
+    
+            & #input-edit::placeholder{
+                font-size: 12px;
+                color:#B1B1B2;
+            }
+    
+            & button{
+                width: 48px;
+                height: 48px;
+                background-color: #fff;
+                border: none;
+                border-radius: 6px;
+                margin-left:5px;
+                cursor:pointer;
+                & i{
+                   font-size: 20px;
+                   display:flex;
+                   justify-content: center;
+                   align-items: center;
+                   color:#0295FF;
+    
+                }
+            }
+        }
+        
+       
+    }
+
+    & button{
+        border: none;
+        width:140px;
+        height: 48px;
+        background-color: #9D9D9E;
+        color: #F3F3F8;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor:pointer;
+        transition: all .3s ease-in;
+        &:hover{
+            background-color: #AF2920;
+        }
+    }
+
+}
+
+
+#toobar{
+    width:457px;
+    & #search{
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+        margin-bottom: 24px;
+    
+        & h4{
+           
+            color:#0460A3;
+        }
+
+        & form{
+            display: flex;
+
+            & #inSearch{
+                width: 400px;
+                height: 48px;
+                border: none;
+                border-radius: 8px;
+                padding-left: 10px;
+            }
+
+            & button{
+                width: 48px;
+                height: 48px;
+                background-color: #fff;
+                border: none;
+                border-radius: 6px;
+                margin-left:5px;
+                cursor:pointer;
+                & i{
+                   font-size: 20px;
+                   display:flex;
+                   justify-content: center;
+                   align-items: center;
+                   color:#0295FF;
+
+                }
+            }
+
+        }
+    }
+}

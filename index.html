@@ -16,7 +16,7 @@
 <body>
     <div id="container">
         <header>
-            <h1>
+            <h1 class="h1">
                 To-do
                 <i class="fi fi-br-list-check"></i>
             </h1>
@@ -24,21 +24,27 @@
         </header>
         <form id="todo-form">
             <div id="form-control">
-                <p>Nova tarefa</p>
-                <input type="text" name="" id="inTodo" placeholder="Sua tarefa de hoje">
-                <button type="submit">
-                    <i class="fi fi-br-add"></i>
-                </button>
-                <p>Adicione uma nova tarefa ao campo de texto.</p>
+                <h4>Nova tarefa</h4>
+                <div class="inTodo">
+                    <input type="text" name="" id="inTodo" placeholder="Sua tarefa de hoje">
+                    <button type="submit">
+                        <i class="fi fi-br-add"></i>
+                    </button>
+                </div>
+                
+                <p class="descrition">Adicione uma nova tarefa ao campo de texto.</p>
             </div>
         </form>
-        <form id="edit-form">
+        <form id="edit-form" class="none">
             <div id="form-control">
                 <h4>Edite a sua tarefa:</h4>
-                <input type="text" name="" id="input-edit">
-                <button type="submit">
-                    <i class="fi fi-br-check-double"></i>
-                </button>
+                <div class="editInput">
+                    <input type="text" name="" id="input-edit">
+                    <button type="submit">
+                        <i class="fi fi-br-check-double"></i>
+                    </button>
+                </div>
+                
             </div>
             <button id="cancel-edit-btn">cancelar</button>
         </form>
