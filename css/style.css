@@ -107,6 +107,7 @@ header{
                    justify-content: center;
                    align-items: center;
                    color:#0295FF;
+                   pointer-events: none;
 
                 }
             }
@@ -164,6 +165,7 @@ header{
                    justify-content: center;
                    align-items: center;
                    color:#0295FF;
+                   pointer-events: none;
     
                 }
             }
@@ -229,6 +231,7 @@ header{
                    justify-content: center;
                    align-items: center;
                    color:#0295FF;
+                   pointer-events: none;
 
                 }
             }
@@ -323,6 +326,7 @@ header{
                justify-content: center;
                align-items: center;
                color:#0295FF;
+               pointer-events: none;
 
             }
 
@@ -341,6 +345,60 @@ header{
                 color: #AF2920;
             }
         }
+
+
     }
+
+    & .done{
+        display: flex;
+        gap: 5px;
+        & h3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:337px;
+            height: 48px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: line-through;
+            font-style: italic;
+            background-color: #0295FF;
+        }
+        & button{
+            width: 48px;
+            height: 48px;
+            background-color: #fff;
+            border: none;
+            border-radius: 6px;
+            margin-left:5px;
+            cursor:pointer;
+
+            & i{
+               font-size: 20px;
+               display:flex;
+               justify-content: center;
+               align-items: center;
+               color:#0295FF;
+               pointer-events: none;
+
+            }
+
+            & .fi-br-check{
+                color: #13a773;
+                opacity: 1;
+            }
+
+            & .fi-br-edit{
+                color: #0295FF;
+            }
+
+            & .fi-br-cross-small{
+
+                color: #AF2920;
+            }
+        }   
+    }
+
     
 }
