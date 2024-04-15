@@ -29,7 +29,7 @@ body{
     border-radius: 24px;
     background-color: #F3F3F8;
 
-    & .none{
+    & .hide{
         display: none;
     }
 }

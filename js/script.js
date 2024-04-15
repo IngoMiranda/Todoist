@@ -1,9 +1,13 @@
 const todoForm = document.querySelector('#todo-form');
 const inTodo = document.querySelector('#inTodo');
 const editForm = document.querySelector('#edit-form');
-const editInput = document.querySelector('#editInput');
+const editInput = document.querySelector('#input-edit');
 const cancelEdit = document.querySelector('#cancel-edit-btn');
 const todoList = document.querySelector('#todo-list');
+
+// preciso salvar o valor inicial do input para comprar se ele existe e em seguida realizar a alteração do valor;
+
+let oldInputValue;
 
 // funções 
 const saveTodo = (text)=>{
@@ -34,8 +38,13 @@ const saveTodo = (text)=>{
     inTodo.value = "";
     inTodo.focus();
 
-}
+};
 
+const toggleForm = ()=>{
+    editForm.classList.toggle("hide");
+    todoForm.classList.toggle("hide");
+    todoList.classList.toggle("hide");
+};
 
 
 
@@ -53,21 +62,34 @@ todoForm.addEventListener("submit",(e)=>{
 document.addEventListener('click', (e)=>{
     const targetEl = e.target;
     const parenteEl = targetEl.closest('div'); // seleciona o elemento pai mais próximo
+    let todoTitle; // variável que conterar o titulo a busca não está sendo realizada pelo id (erro)
+
+    if(parenteEl && parenteEl.querySelector("h3")){
+        todoTitle = parenteEl.querySelector("h3").innerText;
+    };
 
     if(targetEl.classList.contains('finish-todo')){
         parenteEl.classList.toggle('done');
 
-    }
+    };
 
     if(targetEl.classList.contains('cancel-todo')){
         parenteEl.remove();
 
-    }
+    };
 
     if(targetEl.classList.contains('edit-todo')){
-       console.log("estou aqui")
+       toggleForm();
 
-    }
+       editInput.value = todoTitle;
+       oldInputValue = todoTitle;
+
+    };
 
 
+});
+
+cancelEdit.addEventListener("click", (e)=>{
+    e.preventDefault();
+    toggleForm();
 });
