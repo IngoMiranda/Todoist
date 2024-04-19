@@ -46,7 +46,20 @@ const toggleForm = ()=>{
     todoList.classList.toggle("hide");
 };
 
+const updateTodo = (text) =>{
+    
+    const todos = document.querySelectorAll(".todo");
+   
+    todos.forEach((todo)=>{
+        
+        let todoTitle = todo.querySelector("h3");  
+        if (todoTitle.innerText === oldInputValue){
 
+            todoTitle.innerText = text;
+            
+        };
+    });
+};
 
 // Eventos
 
@@ -55,7 +68,7 @@ todoForm.addEventListener("submit",(e)=>{
     const inputValue = inTodo.value;
     if(inputValue){
         saveTodo(inputValue);
-    }
+    };
 
 });
 
@@ -92,4 +105,18 @@ document.addEventListener('click', (e)=>{
 cancelEdit.addEventListener("click", (e)=>{
     e.preventDefault();
     toggleForm();
+});
+
+editForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    const editInputValue = editInput.value;
+
+    if(editInputValue){
+        
+        updateTodo(editInputValue);
+    };
+
+    toggleForm();
+
 });
