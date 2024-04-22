@@ -4,6 +4,10 @@ const editForm = document.querySelector('#edit-form');
 const editInput = document.querySelector('#input-edit');
 const cancelEdit = document.querySelector('#cancel-edit-btn');
 const todoList = document.querySelector('#todo-list');
+const searchInput = document.querySelector('#inSearch');
+const eraseBtn = document.querySelector('#clear-btn');
+const filterBtn = document.querySelector('#filter-select');
+
 
 // preciso salvar o valor inicial do input para comprar se ele existe e em seguida realizar a alteração do valor;
 
@@ -61,6 +65,22 @@ const updateTodo = (text) =>{
     });
 };
 
+const getSearchTodo = (search)=>{
+    const todos = document.querySelectorAll(".todo");
+    
+    todos.forEach((todo)=>{
+        
+        todo.style.display = "flex";
+        let todoTitle = todo.querySelector("h3").innerText.toLowerCase(); 
+        const normalaizedSearch =  search.toLowerCase()
+
+        if(!todoTitle.includes(normalaizedSearch)){
+            todo.style.display = "none";
+        };
+       
+    });
+};
+
 // Eventos
 
 todoForm.addEventListener("submit",(e)=>{
@@ -113,10 +133,21 @@ editForm.addEventListener("submit", (e)=>{
     const editInputValue = editInput.value;
 
     if(editInputValue){
-        
         updateTodo(editInputValue);
     };
 
     toggleForm();
+});
 
+searchInput.addEventListener("keyup", (e) =>{
+    
+    const search = e.target.value; // quando o alvo do evento é o input podemos pegar o valor direto dele. 
+    getSearchTodo(search);
+
+});
+
+eraseBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    searchInput.value = "";
+    searchInput.dispatchEvent(new Event("keyup")); // 
 });
