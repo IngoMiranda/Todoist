@@ -81,6 +81,44 @@ const getSearchTodo = (search)=>{
     });
 };
 
+const filterTodos = (filterValue)=>{
+    const todos = document.querySelectorAll(".todo");
+
+    switch(filterValue){
+
+        case "all":
+            todos.forEach((todo)=>{ 
+                todo.style.display ="flex";
+                const tagDone = document.querySelector("#done");
+                tagDone.style.display = "flex"
+                const tagTodo = document.querySelector("#todo");
+                tagTodo.style.display = "flex";
+            });
+            break;
+
+        case "done":
+            todos.forEach((todo)=>{
+                todo.classList.contains("done") ? (todo.style.display ="flex") : (todo.style.display ="none");
+                const tagDone = document.querySelector("#done");
+                tagDone.style.display = "flex"
+                const tagTodo = document.querySelector("#todo");
+                tagTodo.style.display = "none";
+            });
+            break;
+        case "todo":
+            todos.forEach((todo)=>{ 
+                !todo.classList.contains("done") ? (todo.style.display ="flex") : (todo.style.display ="none" );
+                const tagTodo = document.querySelector("#todo");
+                tagTodo.style.display = "flex";
+                const tagDone = document.querySelector("#done");
+                tagDone.style.display = "none"
+            });
+            break;
+        default:
+            break;
+    }
+}
+
 // Eventos
 
 todoForm.addEventListener("submit",(e)=>{
@@ -151,3 +189,20 @@ eraseBtn.addEventListener("click", (e)=>{
     searchInput.value = "";
     searchInput.dispatchEvent(new Event("keyup")); // 
 });
+
+filterBtn.addEventListener("change", (e)=>{
+    const filterValue = e.target.value;
+    filterTodos(filterValue);
+});
+
+// local storage 
+
+const getTodosLocalStorage = () =>{
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+    return todos;
+};
+
+const saveTodoLocalStorage = (todo) =>{
+    const todos = getTodosLocalStorage();
+    todos.push(todo);
+};
